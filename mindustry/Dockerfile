@@ -16,5 +16,6 @@ RUN \
 EXPOSE 6567
 
 COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
