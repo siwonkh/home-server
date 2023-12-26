@@ -5,12 +5,15 @@ services:
     build:
       dockerfile: ./Dockerfile
     image: ghcr.io/siwonkh/mindustry:latest
+
     tty: true
     stdin_open: true
+
     volumes:
       - ./config:/opt/mindustry/config
     ports:
-      - '6567:6567'
+      - '6567:6567/tcp'
+      - '6567:6567/udp'
     environment:
       - TAG_NAME=v146
       - JVM_XMS=1G
