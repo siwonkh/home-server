@@ -5,6 +5,7 @@ services:
     build:
       dockerfile: ./Dockerfile
     image: ghcr.io/siwonkh/mindustry:latest
+    container_name: mindustry
 
     tty: true
     stdin_open: true
