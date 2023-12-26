@@ -7,10 +7,7 @@ This repository contains Docker Compose configurations for a suite of services i
 
 ## Services
 
-Below are the services included in this repository:
-- Mindustry Server: Configured in mindustry/docker-compose.yml
-
-
+- **Mindustry**: Configured in `mindustry/docker-compose.yml`
 ## Running a Service
 To run a specific service, use the following command in the terminal:
 ```bash
