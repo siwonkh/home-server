@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mindustry:
+    build:
+      dockerfile: ./Dockerfile
+    image: ghcr.io/siwonkh/mindustry:latest
+    volumes:
+      - ./config:/opt/mindustry/config
+    ports:
+      - '6567:6567'
+    environment:
+      - TAG_NAME=v146
+      - JVM_XMS=1G
+      - JVM_XMX=1G
