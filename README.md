@@ -7,10 +7,6 @@ This repository contains Docker Compose configurations for a suite of services i
 
 ## Services
 
-Below are the services included in this repository:
-- Mindustry Server: Configured in mindustry/docker-compose.yml
-
-
+- **Mindustry**: Configured in `mindustry/docker-compose.yml`
 ## What is this repository for?
-
-It's for me
+It's for me :p
