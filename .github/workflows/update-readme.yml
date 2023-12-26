@@ -33,3 +33,5 @@ jobs:
           git add README.md
           git commit -m "docs: add new service to list" || true
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
