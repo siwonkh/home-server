@@ -5,6 +5,8 @@ services:
     build:
       dockerfile: ./Dockerfile
     image: ghcr.io/siwonkh/mindustry:latest
+    tty: true
+    stdin_open: true
     volumes:
       - ./config:/opt/mindustry/config
     ports:
