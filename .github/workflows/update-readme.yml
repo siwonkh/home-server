@@ -34,4 +34,4 @@ jobs:
           title: "Update Service Listing in README"
           body: "This is an auto-generated PR with updates to the service listing."
           branch: "update-readme"
-          labels: "documentation"
+          labels: "docs"
