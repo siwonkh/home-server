@@ -1,6 +1,7 @@
 name: Update README with Service List
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '**/docker-compose*.yml'
