@@ -1,4 +1,4 @@
 #!/bin/sh
-chown -R mindustry:mindustry /opt/mindustry/config
+chown -R $(id -u):$(id -g) /opt/mindustry/config
 cd /opt/mindustry
-su -s '/bin/sh' mindustry -c "java -jar -Xmx$JVM_XMX -Xms$JVM_XMS /opt/mindustry/server-release.jar"
+su -s '/bin/sh' $(id -u) -c "java -jar -Xmx$JVM_XMX -Xms$JVM_XMS /opt/mindustry/server-release.jar"
