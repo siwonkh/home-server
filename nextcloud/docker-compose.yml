@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nextcloud:
-    build: .
+    image: ghcr.io/siwonkh/nextcloud
     restart: always
     networks:
       - ingress
@@ -23,7 +23,7 @@ services:
       - MYSQL_HOST=db
 
   cronjob:
-    build: .
+    image: ghcr.io/siwonkh/nextcloud
     restart: always
     entrypoint: /cron.sh
     networks:
