@@ -3,22 +3,11 @@ services:
   caddy:
     image: ghcr.io/siwonkh/caddy
     restart: always
-    networks:
-      - ingress
+    container_name: caddy
+    network_mode: "host"
     volumes:
-      - ./data/data:/data
-      - ./data/config:/config
       - ./Caddyfile:/etc/caddy/Caddyfile
-    ports:
-      - "80:80/tcp"
-      - "443:443/tcp"
-      - "443:443/udp"
-
-networks:
-  ingress:
-    driver: bridge
-    name: ingress
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.30.0.1/16
+      - ./certs:/certs
+      - ./config:/config
+      - ./data:/data
+      - ./sites:/srv
