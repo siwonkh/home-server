@@ -1,0 +1,77 @@
+version: '3'
+
+services:
+  nextcloud:
+    build: .
+    restart: always
+    networks:
+      - ingress
+      - nextcloud
+    expose:
+      - 80
+    volumes:
+      - ./data/config:/var/www/html/config
+      - ./data/apps:/var/www/html/apps
+      - ./data/custom_apps:/var/www/html/custom_apps
+      - /mnt/d/ncdata/data:/var/www/html/data
+      - nextcloud:/var/www/html
+    env_file: .env
+    environment:
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+
+  cronjob:
+    build: .
+    restart: always
+    entrypoint: /cron.sh
+    networks:
+      - nextcloud
+    depends_on:
+      - nextcloud
+    volumes:
+      - ./data/config:/var/www/html/config
+      - ./data/apps:/var/www/html/apps
+      - ./data/custom_apps:/var/www/html/custom_apps
+      - /mnt/d/ncdata/data:/var/www/html/data
+      - nextcloud:/var/www/html
+    env_file: .env
+    environment:
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    networks:
+      - nextcloud
+    expose:
+      - 3306
+    env_file: .env
+    environment:
+      - MARIADB_RANDOM_ROOT_PASSWORD=yes
+      - MARIADB_DATABASE=nextcloud
+      - MARIADB_USER=nextcloud
+      - MARIADB_PASSWORD=${DATABASE_PASSWORD}
+
+  redis:
+    image: redis
+    restart: always
+    expose:
+      - 6379
+    networks:
+      - nextcloud
+
+volumes:
+  nextcloud:
+
+networks:
+  ingress:
+    name: ingress
+    external: true
+  nextcloud:
