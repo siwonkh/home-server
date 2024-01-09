@@ -8,10 +8,10 @@ services:
       GF_RENDERING_SERVER_URL: http://renderer:8081/render
       GF_RENDERING_CALLBACK_URL: http://grafana:3000/
     volumes:
-      - ./data/grafana:/etc/grafana:rw
-      - ./data/grafana:/var/lib/grafana:rw
-      - ./grafana.ini:/etc/grafana/grafana.ini:ro
-      - ./grafana.ini:/var/lib/grafana/grafana.ini:ro
+      - ./volume/data/grafana:/etc/grafana:rw
+      - ./volume/data/grafana:/var/lib/grafana:rw
+      - ./volume/grafana.ini:/etc/grafana/grafana.ini:ro
+      - ./volume/grafana.ini:/var/lib/grafana/grafana.ini:ro
     expose:
       - "3000"
     networks:

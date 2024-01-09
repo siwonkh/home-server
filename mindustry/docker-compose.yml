@@ -11,7 +11,7 @@ services:
     stdin_open: true
 
     volumes:
-      - ./config:/opt/mindustry/config
+      - ./volume/config:/opt/mindustry/config
     ports:
       - '6567:6567/tcp'
       - '6567:6567/udp'
