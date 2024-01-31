@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3"
 services:
   grafana:
     image: grafana/grafana
@@ -12,10 +12,9 @@ services:
       - ./volume/data/grafana:/var/lib/grafana:rw
       - ./volume/grafana.ini:/etc/grafana/grafana.ini:ro
       - ./volume/grafana.ini:/var/lib/grafana/grafana.ini:ro
-    expose:
-      - "3000"
+    ports:
+      - "127.0.0.1:3000:3000"
     networks:
-      - ingress
       - monitoring
   renderer:
     image: grafana/grafana-image-renderer:latest
@@ -80,7 +79,5 @@ services:
       - monitoring
 
 networks:
-  ingress:
-    name: ingress
   monitoring:
     driver: bridge
