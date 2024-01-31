@@ -1,6 +1,6 @@
 version: "3"
 services:
-  syncthing:
+  syncthing1:
     image: syncthing/syncthing
     container_name: syncthing
     hostname: my-syncthing
@@ -8,6 +8,42 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /syncthing/st-sync:/var/syncthing
+      - /syncthing/st-sync1:/var/syncthing
+    network_mode: host
+    restart: unless-stopped
+
+  syncthing2:
+    image: syncthing/syncthing
+    container_name: syncthing
+    hostname: my-syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /syncthing/st-sync2:/var/syncthing
+    network_mode: host
+    restart: unless-stopped
+
+  syncthing3:
+    image: syncthing/syncthing
+    container_name: syncthing
+    hostname: my-syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /syncthing/st-sync3:/var/syncthing
+    network_mode: host
+    restart: unless-stopped
+
+  syncthing4:
+    image: syncthing/syncthing
+    container_name: syncthing
+    hostname: my-syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /syncthing/st-sync4:/var/syncthing
     network_mode: host
     restart: unless-stopped
