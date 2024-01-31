@@ -2,8 +2,8 @@ version: "3"
 services:
   syncthing1:
     image: syncthing/syncthing
-    container_name: syncthing
-    hostname: my-syncthing
+    container_name: syncthing1
+    hostname: my-syncthing1
     environment:
       - PUID=1000
       - PGID=1000
@@ -14,8 +14,8 @@ services:
 
   syncthing2:
     image: syncthing/syncthing
-    container_name: syncthing
-    hostname: my-syncthing
+    container_name: syncthing2
+    hostname: my-syncthing2
     environment:
       - PUID=1000
       - PGID=1000
@@ -26,8 +26,8 @@ services:
 
   syncthing3:
     image: syncthing/syncthing
-    container_name: syncthing
-    hostname: my-syncthing
+    container_name: syncthing3
+    hostname: my-syncthing3
     environment:
       - PUID=1000
       - PGID=1000
@@ -38,8 +38,8 @@ services:
 
   syncthing4:
     image: syncthing/syncthing
-    container_name: syncthing
-    hostname: my-syncthing
+    container_name: syncthing4
+    hostname: my-syncthing4
     environment:
       - PUID=1000
       - PGID=1000
