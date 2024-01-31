@@ -6,3 +6,18 @@ cloud.siwonkh.com {
     header Strict-Transport-Security max-age=31536000;
     reverse_proxy localhost:11000
 }
+
+sync.siwonkh.com {
+    reverse_proxy /1* localhost:8384 {
+        uri strip_prefix /1
+    }
+    reverse_proxy /2* localhost:8385 {
+        uri strip_prefix /2
+    }
+    reverse_proxy /3* localhost:8386 {
+        uri strip_prefix /3
+    }
+    reverse_proxy /4* localhost:8387 {
+        uri strip_prefix /4
+    }
+}
