@@ -6,7 +6,3 @@ cloud.siwonkh.com {
     header Strict-Transport-Security max-age=31536000;
     reverse_proxy localhost:11000
 }
-
-192.168.0.4:8384 {
-    reverse_proxy localhost:8384
-}
