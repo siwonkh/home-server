@@ -52,7 +52,10 @@ def main():
         for service in extract_service_names(file_path):
             services[service] = os.path.relpath(file_path).replace('\\', '/')
 
-    update_readme(sorted(services))
+    sorted_service_names = sorted(services.keys())
+    sorted_services = {service_name: services[service_name] for service_name in sorted_service_names}
+
+    update_readme(sorted_services)
 
 
 if __name__ == "__main__":
