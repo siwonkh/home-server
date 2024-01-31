@@ -19,3 +19,7 @@ sync3.siwonkh.com {
 sync4.siwonkh.com {
     reverse_proxy localhost:8387
 }
+
+grafana.siwonkh.com {
+    reverse_proxy localhost:3000
+}
