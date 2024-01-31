@@ -14,6 +14,7 @@ This repository contains Docker Compose configurations for a suite of services i
 - **Node-Exporter**: Configured in `grafana/docker-compose.yml`
 - **Prometheus**: Configured in `grafana/docker-compose.yml`
 - **Cadvisor**: Configured in `grafana/docker-compose.yml`
+- **Syncthing**: Configured in `syncthing/docker-compose.yml`
 - **Caddy**: Configured in `caddy/docker-compose.yml`
 ## What is this repository for?
 It's for me :p
