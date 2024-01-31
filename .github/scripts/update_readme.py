@@ -8,7 +8,7 @@ def find_docker_compose_files():
         for file in files_in_dir:
             if file.startswith('docker-compose') and file.endswith('.yml'):
                 files.append(os.path.join(root, file))
-    return files
+    return sorted(files)
 
 
 def extract_service_names(file_path):
@@ -52,10 +52,7 @@ def main():
         for service in extract_service_names(file_path):
             services[service] = os.path.relpath(file_path).replace('\\', '/')
 
-    sorted_service_names = sorted(services.keys())
-    sorted_services = {service_name: services[service_name] for service_name in sorted_service_names}
-
-    update_readme(sorted_services)
+    update_readme(services)
 
 
 if __name__ == "__main__":
