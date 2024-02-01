@@ -8,7 +8,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /syncthing/st-sync1:/var/syncthing
+      - /mnt/drive/syncthing/st-sync1:/var/syncthing
     ports:
       - "127.0.0.1:8384:8384"
       - "22000:22000/tcp"
@@ -24,7 +24,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /syncthing/st-sync2:/var/syncthing
+      - /mnt/drive/syncthing/st-sync2:/var/syncthing
     ports:
       - "127.0.0.1:8385:8384"
       - "22001:22000/tcp"
@@ -40,7 +40,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /syncthing/st-sync3:/var/syncthing
+      - /mnt/drive/syncthing/st-sync3:/var/syncthing
     ports:
       - "127.0.0.1:8386:8384"
       - "22002:22000/tcp"
@@ -56,7 +56,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /syncthing/st-sync4:/var/syncthing
+      - /mnt/drive/syncthing/st-sync4:/var/syncthing
     ports:
       - "127.0.0.1:8387:8384"
       - "22003:22000/tcp"
