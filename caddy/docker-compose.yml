@@ -1,12 +1,13 @@
-version: '3.9'
+version: "3.9"
 services:
   caddy:
     image: caddy:2
     restart: always
     container_name: caddy
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80/tcp"
+      - "443:443/tcp"
+      - "443:443/udp"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./volume/certs:/certs
