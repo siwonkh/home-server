@@ -10,6 +10,8 @@ services:
     environment:
       - APACHE_PORT=11000
       - NEXTCLOUD_DATADIR=/mnt/drive/ncdata
+      - PHP_MEMORY_LIMIT=1024MB
+      - PHP_UPLOAD_LIMIT=16GB
     volumes:
       - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
       - /var/run/docker.sock:/var/run/docker.sock:ro
