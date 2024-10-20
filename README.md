@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains Docker Compose configurations for a suite of services including web servers, databases, and game servers. Each service is defined in its own Docker Compose YAML file for easy management and deployment.
+This repository contains Docker Compose configurations for some of my own services including web servers, databases, and game servers. Each service is defined in its own Docker Compose YAML file for easy management and deployment.
 
 
 ## Services
