@@ -2,7 +2,7 @@
 	email kanghyunkim313@gmail.com
 }
 
-cloud.siwonkh.com {
+cloud.zevk.me {
     redir /.well-known/carddav /remote.php/dav 301
     redir /.well-known/caldav /remote.php/dav 301
 
@@ -10,19 +10,23 @@ cloud.siwonkh.com {
     reverse_proxy localhost:11000
 }
 
-sync1.siwonkh.com {
+sync1.zevk.me {
     reverse_proxy localhost:8384
 }
-sync2.siwonkh.com {
+sync2.zevk.me {
     reverse_proxy localhost:8385
 }
-sync3.siwonkh.com {
+sync3.zevk.me {
     reverse_proxy localhost:8386
 }
-sync4.siwonkh.com {
+sync4.zevk.me {
     reverse_proxy localhost:8387
 }
 
-grafana.siwonkh.com {
+grafana.zevk.me {
     reverse_proxy localhost:3000
+}
+
+wg.zevk.me {
+    reverse_proxy wg-easy:51821
 }
