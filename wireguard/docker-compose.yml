@@ -5,12 +5,7 @@ services:
     environment:
       - WG_HOST=vpn.zevk.me
       - PASSWORD_HASH=$$2a$$12$$UMkz5Ii.RevRwSLaWf5PfuiL9WpsPBOZpt1M0uaMsY57cixAQH.SG
-      - PORT=51821
-      - WG_PORT=51820
-      - WG_DEFAULT_ADDRESS=10.8.0.x
-      - WG_DEFAULT_DNS=1.1.1.1
       - WG_MTU=1420
-      - WG_ALLOWED_IPS=0.0.0.0/0
     volumes:
       - ~/.wg-easy:/etc/wireguard
     ports:
