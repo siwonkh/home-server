@@ -28,5 +28,5 @@ grafana.zevk.me {
 }
 
 wg.zevk.me {
-    reverse_proxy wg-easy:51821
+    reverse_proxy localhost:51821
 }
