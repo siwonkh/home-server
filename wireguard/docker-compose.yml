@@ -4,7 +4,7 @@ services:
     container_name: wg-easy
     environment:
       - WG_HOST=vpn.zevk.me
-      - PASSWORD_HASH=$$2a$12$UMkz5Ii.RevRwSLaWf5PfuiL9WpsPBOZpt1M0uaMsY57cixAQH.SG
+      - PASSWORD_HASH=$$2a$$12$$UMkz5Ii.RevRwSLaWf5PfuiL9WpsPBOZpt1M0uaMsY57cixAQH.SG
       - PORT=51821
       - WG_PORT=51820
       - WG_DEFAULT_ADDRESS=10.8.0.x
