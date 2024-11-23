@@ -6,6 +6,7 @@ services:
       - WG_HOST=vpn.zevk.me
       - PASSWORD_HASH=$$2a$$12$$UMkz5Ii.RevRwSLaWf5PfuiL9WpsPBOZpt1M0uaMsY57cixAQH.SG
       - WG_MTU=1420
+      - WG_PERSISTENT_KEEPALIVE=25
     volumes:
       - ~/.wg-easy:/etc/wireguard
     ports:
