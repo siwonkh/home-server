@@ -3,16 +3,16 @@ services:
     image: ghcr.io/wg-easy/wg-easy
     container_name: wg-easy
     environment:
-      - WG_HOST=vpn.zevk.me
+      - WG_HOST=wg.zevk.me
       - PASSWORD_HASH=$$2a$$12$$UMkz5Ii.RevRwSLaWf5PfuiL9WpsPBOZpt1M0uaMsY57cixAQH.SG
-      - WG_DEVICE=ens33
       - WG_MTU=1420
       - WG_PERSISTENT_KEEPALIVE=25
     volumes:
       - ~/.wg-easy:/etc/wireguard
     ports:
       - "51820:51820/udp"
-      - "51821:51821/tcp"
+    expose:
+      - "51821"
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -20,4 +20,9 @@ services:
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
+    networks:
+      - ingress
 
+networks:
+  ingress:
+    external: true
