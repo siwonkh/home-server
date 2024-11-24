@@ -1,28 +1,27 @@
 services:
-  wg-easy:
-    image: ghcr.io/wg-easy/wg-easy
-    container_name: wg-easy
-    environment:
-      - WG_HOST=wg.zevk.me
-      - PASSWORD_HASH=$$2a$$12$$UMkz5Ii.RevRwSLaWf5PfuiL9WpsPBOZpt1M0uaMsY57cixAQH.SG
-      - WG_MTU=1420
-      - WG_PERSISTENT_KEEPALIVE=25
-    volumes:
-      - ~/.wg-easy:/etc/wireguard
-    ports:
-      - "51820:51820/udp"
-    expose:
-      - "51821"
-    restart: unless-stopped
+  wireguard:
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: wireguard
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Seoul
+      - SERVERURL=auto
+      - SERVERPORT=51820
+      - PEERS=1
+      - PEERDNS=1.1.1.1
+      - INTERNAL_SUBNET=10.13.13.0
+      - ALLOWEDIPS=0.0.0.0/0
+      - PERSISTENTKEEPALIVE_PEERS=all
+      - LOG_CONFS=true
+    volumes:
+      - ./volume/config:/config
+      - /lib/modules:/lib/modules
+    ports:
+      - "51820:51820/udp"
     sysctls:
-      - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
-    networks:
-      - ingress
-
-networks:
-  ingress:
-    external: true
+    restart: unless-stopped
