@@ -26,7 +26,3 @@ sync4.zevk.me {
 grafana.zevk.me {
 	reverse_proxy localhost:3000
 }
-
-wg.zevk.me {
-	reverse_proxy wg-easy:51821
-}
