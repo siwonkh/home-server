@@ -13,3 +13,9 @@ services:
       - ./volume/config:/config
       - ./volume/data:/data
       - ./volume/sites:/srv
+    networks:
+      - ingress
+
+networks:
+  ingress:
+    external: true
