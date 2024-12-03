@@ -9,7 +9,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Seoul
-      - SERVERURL=auto
+      - SERVERURL=wg.zevk.me
       - SERVERPORT=51820
       - PEERS=1
       - PEERDNS=1.1.1.1

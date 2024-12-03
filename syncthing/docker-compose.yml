@@ -1,4 +1,3 @@
-version: "3"
 services:
   syncthing1:
     image: syncthing/syncthing
@@ -15,6 +14,8 @@ services:
       - "22000:22000/udp"
       - "21027:21027/udp"
     restart: unless-stopped
+    networks:
+      - ingress
 
   syncthing2:
     image: syncthing/syncthing
@@ -31,6 +32,8 @@ services:
       - "22001:22000/udp"
       - "21028:21027/udp"
     restart: unless-stopped
+    networks:
+      - ingress
 
   syncthing3:
     image: syncthing/syncthing
@@ -47,6 +50,8 @@ services:
       - "22002:22000/udp"
       - "21029:21027/udp"
     restart: unless-stopped
+    networks:
+      - ingress
 
   syncthing4:
     image: syncthing/syncthing
@@ -63,3 +68,10 @@ services:
       - "22003:22000/udp"
       - "21030:21027/udp"
     restart: unless-stopped
+    networks:
+      - ingress
+
+networks:
+  ingress:
+    driver: bridge
+    name: ingress
