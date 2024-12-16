@@ -11,16 +11,16 @@ cloud.zevk.me {
 }
 
 sync1.zevk.me {
-	reverse_proxy syncthing1:8384
+	reverse_proxy localhost:8384
 }
 sync2.zevk.me {
-	reverse_proxy syncthing2:8385
+	reverse_proxy localhost:8385
 }
 sync3.zevk.me {
-	reverse_proxy syncthing3:8386
+	reverse_proxy localhost:8386
 }
 sync4.zevk.me {
-	reverse_proxy syncthing4:8387
+	reverse_proxy localhost:8387
 }
 
 grafana.zevk.me {
