@@ -8,14 +8,8 @@ services:
       - PGID=1000
     volumes:
       - /mnt/drive/syncthing/st-sync1:/var/syncthing
-    ports:
-      - "127.0.0.1:8384:8384"
-      - "22000:22000/tcp"
-      - "22000:22000/udp"
-      - "21027:21027/udp"
     restart: unless-stopped
-    networks:
-      - ingress
+    network_mode: "host"
 
   syncthing2:
     image: syncthing/syncthing
@@ -26,14 +20,8 @@ services:
       - PGID=1000
     volumes:
       - /mnt/drive/syncthing/st-sync2:/var/syncthing
-    ports:
-      - "127.0.0.1:8385:8384"
-      - "22001:22000/tcp"
-      - "22001:22000/udp"
-      - "21028:21027/udp"
     restart: unless-stopped
-    networks:
-      - ingress
+    network_mode: "host"
 
   syncthing3:
     image: syncthing/syncthing
@@ -44,14 +32,8 @@ services:
       - PGID=1000
     volumes:
       - /mnt/drive/syncthing/st-sync3:/var/syncthing
-    ports:
-      - "127.0.0.1:8386:8384"
-      - "22002:22000/tcp"
-      - "22002:22000/udp"
-      - "21029:21027/udp"
     restart: unless-stopped
-    networks:
-      - ingress
+    network_mode: "host"
 
   syncthing4:
     image: syncthing/syncthing
@@ -62,16 +44,5 @@ services:
       - PGID=1000
     volumes:
       - /mnt/drive/syncthing/st-sync4:/var/syncthing
-    ports:
-      - "127.0.0.1:8387:8384"
-      - "22003:22000/tcp"
-      - "22003:22000/udp"
-      - "21030:21027/udp"
     restart: unless-stopped
-    networks:
-      - ingress
-
-networks:
-  ingress:
-    driver: bridge
-    name: ingress
+    network_mode: "host"
