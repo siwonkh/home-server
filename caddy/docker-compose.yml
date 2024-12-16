@@ -3,7 +3,6 @@ services:
     image: caddy:2
     restart: always
     container_name: caddy
-    user: 1000:1000
     networks:
       - ingress
     ports:
