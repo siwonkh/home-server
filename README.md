@@ -16,9 +16,6 @@ This repository contains Docker Compose configurations for some of my own servic
 - **Mindustry**: Configured in `mindustry/docker-compose.yml`
 - **Nextcloud**: Configured in `nextcloud/docker-compose.yml`
 - **Syncthing1**: Configured in `syncthing/docker-compose.yml`
-- **Syncthing2**: Configured in `syncthing/docker-compose.yml`
-- **Syncthing3**: Configured in `syncthing/docker-compose.yml`
-- **Syncthing4**: Configured in `syncthing/docker-compose.yml`
-- **Wg-Easy**: Configured in `wireguard/docker-compose.yml`
+- **Wireguard**: Configured in `wireguard/docker-compose.yml`
 ## What is this repository for?
 It's for me :p
