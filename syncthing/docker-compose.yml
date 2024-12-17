@@ -8,41 +8,17 @@ services:
       - PGID=1000
     volumes:
       - /mnt/drive/syncthing/st-sync1:/var/syncthing
+    expose:
+      - "8384"
+    ports:
+      - "22000:22000/tcp"
+      - "22000:22000/udp"
+      - "21027:21027/udp"
     restart: unless-stopped
-    network_mode: "host"
+    networks:
+      - ingress
 
-  syncthing2:
-    image: syncthing/syncthing
-    container_name: syncthing2
-    hostname: my-syncthing2
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /mnt/drive/syncthing/st-sync2:/var/syncthing
-    restart: unless-stopped
-    network_mode: "host"
-
-  syncthing3:
-    image: syncthing/syncthing
-    container_name: syncthing3
-    hostname: my-syncthing3
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /mnt/drive/syncthing/st-sync3:/var/syncthing
-    restart: unless-stopped
-    network_mode: "host"
-
-  syncthing4:
-    image: syncthing/syncthing
-    container_name: syncthing4
-    hostname: my-syncthing4
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /mnt/drive/syncthing/st-sync4:/var/syncthing
-    restart: unless-stopped
-    network_mode: "host"
+networks:
+  ingress:
+    driver: bridge
+    name: ingress
