@@ -2,25 +2,26 @@
 	email kanghyunkim313@gmail.com
 }
 
+:8080 {
+    @internal network 192.168.0.0/24
+    handle @internal {
+        reverse_proxy nextcloud:8080
+    }
+    handle {
+        respond "Access Forbidden" 403
+    }
+}
+
 cloud.zevk.me {
 	redir /.well-known/carddav /remote.php/dav 301
 	redir /.well-known/caldav /remote.php/dav 301
 
 	header Strict-Transport-Security max-age=31536000;
-	reverse_proxy localhost:11000
+	reverse_proxy 192.168.0.4:11000
 }
 
 sync1.zevk.me {
-	reverse_proxy localhost:8384
-}
-sync2.zevk.me {
-	reverse_proxy localhost:8385
-}
-sync3.zevk.me {
-	reverse_proxy localhost:8386
-}
-sync4.zevk.me {
-	reverse_proxy localhost:8387
+	reverse_proxy syncthing1:8384
 }
 
 grafana.zevk.me {
