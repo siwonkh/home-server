@@ -15,6 +15,7 @@ This repository contains Docker Compose configurations for some of my own servic
 - **Cadvisor**: Configured in `grafana/docker-compose.yml`
 - **Mindustry**: Configured in `mindustry/docker-compose.yml`
 - **Nextcloud**: Configured in `nextcloud/docker-compose.yml`
+- **Resilio-Sync**: Configured in `sync/docker-compose.yml`
 - **Syncthing1**: Configured in `syncthing/docker-compose.yml`
 - **Wireguard**: Configured in `wireguard/docker-compose.yml`
 ## What is this repository for?
